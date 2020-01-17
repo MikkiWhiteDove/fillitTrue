@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sreyne <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: misa <misa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 18:58:24 by sreyne            #+#    #+#             */
-/*   Updated: 2020/01/16 20:10:39 by sreyne           ###   ########.fr       */
+/*   Updated: 2020/01/17 23:28:00 by misa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	print_char_elements(t_element *element)
 		{
 			while (j < tmp->rows)
 			{
-				printf("%c", (char)(tmp->matrix[i][j] + 48));
+				write(1, (char)(tmp->matrix[i][j] + 48), 1);
 				j++;
 			}
-			ft_putstr("\n");
+			write(1, '\n', 1);
 			j = 0;
 			i++;
 		}
-		ft_putstr("\n");
+		write(1, '\n', 1);
 		i = 0;
 		tmp = tmp->next;
 	}
@@ -59,14 +59,14 @@ void	print_elements(t_element *element)
 		{
 			while (j < tmp->rows)
 			{
-				printf("%c", (char)(tmp->matrix[i][j]));
+				write(1, (char)(tmp->matrix[i][j]), 1);
 				j++;
 			}
-			ft_putstr("\n");
+			write(1, '\n', 1);
 			j = 0;
 			i++;
 		}
-		ft_putstr("\n");
+		write(1, '\n', 1);
 		i = 0;
 		tmp = tmp->next;
 	}
@@ -82,19 +82,19 @@ void	print_solution(t_solution *solution)
 	j = 3;
 	tmp = solution;
 	if (tmp == NULL)
-		printf("null");
+		ft_putstr("null");
 	while (i < tmp->size + SOLUTION_BUF - 3)
 	{
 		while (j < tmp->size + SOLUTION_BUF - 3)
 		{
-			printf("%c", tmp->map[i][j]);
+			write(1, tmp->map[i][j], 1);
 			j++;
 		}
-		printf("\n");
+		write(1, '\n', 1);
 		j = 3;
 		i++;
 	}
-	printf("\n");
+	write(1, '\n', 1);
 	i = 0;
 }
 
@@ -108,19 +108,19 @@ void	print_solution_char(t_solution *solution)
 	j = 0;
 	tmp = solution;
 	if (tmp == NULL)
-		printf("null");
+		ft_putstr("null");
 	while (i < tmp->size + SOLUTION_BUF)
 	{
 		while (j < tmp->size + SOLUTION_BUF)
 		{
-			printf("%c", (char)(tmp->map[i][j] + 48));
+			write(1, (char)(tmp->map[i][j] + 48), 1);
 			j++;
 		}
-		printf("\n");
+		write(1, '\n', 1);
 		j = 0;
 		i++;
 	}
-	printf("\n");
+	write(1, '\n', 1);
 	i = 0;
 }
 

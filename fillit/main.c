@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhoth <bhoth@student.42.fr>                +#+  +:+       +#+        */
+/*   By: misa <misa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 20:35:19 by bhoth             #+#    #+#             */
-/*   Updated: 2020/01/16 20:13:55 by sreyne           ###   ########.fr       */
+/*   Updated: 2020/01/17 23:21:29 by misa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		main(int argc, char **argv)
 	{
 		ft_putstr("error\n");
 		return (1);
-
 	}
 	if (get_tetr_count(element) > 26
 			||!check_elements(element))

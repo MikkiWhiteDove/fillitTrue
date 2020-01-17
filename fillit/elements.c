@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   elements.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhoth <bhoth@student.42.fr>                +#+  +:+       +#+        */
+/*   By: misa <misa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 20:43:28 by bhoth             #+#    #+#             */
-/*   Updated: 2020/01/16 19:22:58 by sreyne           ###   ########.fr       */
+/*   Updated: 2020/01/17 23:20:06 by misa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void		free_elements(t_element *element)
 	{
 		if (temp->next != NULL)
 			free_elements(temp->next);
-		free(temp->matrix);
+		if (temp->matrix != NULL)
+		{
+			free_element_matrix(temp->matrix, 4);
+		}
 		free(temp);
 	}
 }
@@ -128,7 +131,6 @@ char		**create_matrix(char **matrix, int count, char *buf)
 	if (temp != matrix)
 	{
 		free_element_matrix(matrix, count);
-		free(matrix);//!!!!!
 	}
 	return (temp);
 }
