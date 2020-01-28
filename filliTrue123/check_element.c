@@ -59,22 +59,27 @@ int		check_tetr_form(char **matrix)
 	int count;
 	int i;
 	int j;
+	int	r;
 
 	i = 0;
 	j = 0;
+	r = 0;
 	count = 0;
 	while (i < 4)
 	{
 		while (matrix[i][j])
 		{
 			if (matrix[i][j] == '#')
+			{
 				count = count + count_adj(matrix, i, j);
+				r++;
+			}
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	if (count >= 6)
+	if (count >= 6 && r == 4)
 		return (1);
 	return (0);
 }

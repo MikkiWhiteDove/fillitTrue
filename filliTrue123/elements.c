@@ -6,7 +6,7 @@
 /*   By: misa <misa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 20:43:28 by bhoth             #+#    #+#             */
-/*   Updated: 2020/01/17 23:35:46 by misa             ###   ########.fr       */
+/*   Updated: 2020/01/27 23:17:33 by sreyne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char		**create_matrix(char **matrix, int count, char *buf)
 	char		**temp;
 	int			i;
 
-	temp = (char**)malloc(sizeof(char*) * (count + 1));//!!!!!
+	temp = (char**)malloc(sizeof(char*) * (count + 1));
 	if (temp == NULL)
 		return (NULL);
 	i = 0;

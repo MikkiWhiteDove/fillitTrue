@@ -29,17 +29,17 @@ void	print_char_elements(t_element *element)
 		{
 			while (j < tmp->rows)
 			{
-				//write(1, (char)(tmp->matrix[i][j] + 48), 1);
-				printf("%c", tmp->matrix[i][j] + 48);
+				write(1, &tmp->matrix[i][j] + 48, 1);
+				//printf("%c", tmp->matrix[i][j] + 48);
 				j++;
 			}
-			//write(1, "\n", 1);
-			printf("\n");
+			write(1, "\n", 1);
+			//printf("\n");
 			j = 0;
 			i++;
 		}
-		//write(1, "\n", 1);
-		printf("\n");
+		write(1, "\n", 1);
+		//printf("\n");
 		i = 0;
 		tmp = tmp->next;
 	}
@@ -63,16 +63,17 @@ void	print_elements(t_element *element)
 			while (j < tmp->rows)
 			{
 				//write(1, tmp->matrix[i][j], 1);
-				printf("%c", (char)tmp->matrix[i][j]);
+				write(1, &tmp->matrix[i][j], 1);
+				//printf("%c", (char)tmp->matrix[i][j]);
 				j++;
 			}
-			//write(1, "\n", 1);
-			printf("\n");
+			write(1, "\n", 1);
+			//printf("\n");
 			j = 0;
 			i++;
 		}
-		//write(1, "\n", 1);
-		printf("\n");
+		write(1, "\n", 1);
+		//printf("\n");
 		i = 0;
 		tmp = tmp->next;
 	}
@@ -93,17 +94,17 @@ void	print_solution(t_solution *solution)
 	{
 		while (j < tmp->size + SOLUTION_BUF - 3)
 		{
-			//write(1, (char)tmp->map[i][j], 1);
-			printf("%c", (char)tmp->map[i][j]);
+			write(1, &tmp->map[i][j], 1);
+			//printf((char)tmp->map[i][j]);
 			j++;
 		}
-		//write(1, "\n", 1);
-		printf("\n");
+		write(1, "\n", 1);
+		//printf("\n");
 		j = 3;
 		i++;
 	}
-	printf("\n");
-	//write(1, "\n", 1);
+	//printf("\n");
+	write(1, "\n", 1);
 	i = 0;
 }
 
@@ -122,17 +123,17 @@ void	print_solution_char(t_solution *solution)
 	{
 		while (j < tmp->size + SOLUTION_BUF)
 		{
-			//write(1, tmp->map[i][j] + 48, 1);
-			printf("%c", tmp->map[i][j] + 48);
+			write(1, &tmp->map[i][j] + 48, 1);
+			//printf("%c", tmp->map[i][j] + 48);
 			j++;
 		}
-		//write(1, "\n", 1);
-		printf("\n");
+		write(1, "\n", 1);
+		//printf("\n");
 		j = 0;
 		i++;
 	}
-	//write(1, "\n", 1);
-	printf("\n");
+	write(1, "\n", 1);
+	//printf("\n");
 	i = 0;
 }
 

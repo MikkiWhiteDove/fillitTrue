@@ -32,23 +32,20 @@ int		main(int argc, char **argv)
 	t_element *element;
 	t_solution *global_solution;
 
-	if (argc == 500)
-		return (1);
-	element = NULL;
-	global_solution = NULL;
-	if (argc != 2)
+	if (argc != 2 || argc == 500)
 	{
 		ft_putstr("usage: ./fillit source_file\n");
 		return (1);
 	}
+
+	global_solution = NULL;
 	element = create_elements(argv[1]);
 	if (element == NULL)
 	{
 		ft_putstr("error\n");
 		return (1);
 	}
-	if (get_tetr_count(element) > 26
-			||!check_elements(element))
+	if (get_tetr_count(element) > 26 || !check_elements(element))
 	{
 		free_elements(element);
 		ft_putstr("error\n");
