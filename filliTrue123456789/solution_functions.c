@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solution_functions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhoth <bhoth@student.42.fr>                +#+  +:+       +#+        */
+/*   By: sreyne <sreyne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 19:27:20 by sreyne            #+#    #+#             */
-/*   Updated: 2020/01/29 19:39:05 by bhoth            ###   ########.fr       */
+/*   Updated: 2020/01/31 20:25:06 by sreyne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ char	**create_solution_map(int solution_size)
 
 	i = 0;
 	j = 0;
-	map = (char**)malloc(sizeof(char*) * (solution_size + SOLUTION_BUF));
+	map = (char**)ft_memalloc(sizeof(char*) * (solution_size + SOLUTION_BUF));
 	while (i < SOLUTION_BUF + solution_size)
 	{
-		map[i] = (char*)malloc(sizeof(char) * (solution_size + SOLUTION_BUF));
+		map[i] = (char*)ft_memalloc(sizeof(char) * (solution_size + SOLUTION_BUF));
 		while (j < SOLUTION_BUF + solution_size)
 		{
 			map[i][j] = 0;
@@ -63,10 +63,10 @@ char	**create_char_solution_map(int solution_size)
 
 	i = 0;
 	j = 0;
-	map = (char**)malloc(sizeof(char*) * (solution_size + SOLUTION_BUF));
+	map = (char**)ft_memalloc(sizeof(char*) * (solution_size + SOLUTION_BUF));
 	while (i < SOLUTION_BUF + solution_size)
 	{
-		map[i] = (char*)malloc(sizeof(char) * (solution_size + SOLUTION_BUF));
+		map[i] = (char*)ft_memalloc(sizeof(char) * (solution_size + SOLUTION_BUF));
 		while (j < SOLUTION_BUF + solution_size)
 		{
 			map[i][j] = '.';

@@ -6,7 +6,7 @@
 /*   By: sreyne <sreyne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 21:04:58 by sreyne            #+#    #+#             */
-/*   Updated: 2020/01/30 21:42:42 by sreyne           ###   ########.fr       */
+/*   Updated: 2020/01/31 21:32:02 by sreyne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_element	*create_elements(char *str)
 	if (fd < 0)
 		return (NULL);
 	i = 0;
-	element = (t_element*)malloc(sizeof(t_element));
+	element = (t_element*)ft_memalloc(sizeof(t_element));
 	temp = element;
 	while (get_next_line(fd, &buf) > 0)
 	{
@@ -88,7 +88,7 @@ t_element	*create_elements(char *str)
 
 int			create_temp_matrix(t_element *temp, int i, char *buf)
 {
-	temp->matrix = create_matrix(temp->matrix, i, buf);
+	create_matrix(temp, i, buf);
 	temp->next = NULL;
 	i++;
 	temp->rows = i;
@@ -102,6 +102,6 @@ int			if_buf_free_str(t_element *temp, t_element *element)
 		free_elements(element);
 		return (1);
 	}
-	temp->next = (t_element*)malloc(sizeof(t_element));
+	temp->next = (t_element*)ft_memalloc(sizeof(t_element));
 	return (0);
 }

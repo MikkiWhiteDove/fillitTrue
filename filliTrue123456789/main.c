@@ -6,7 +6,7 @@
 /*   By: sreyne <sreyne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 20:35:19 by bhoth             #+#    #+#             */
-/*   Updated: 2020/01/30 21:30:15 by sreyne           ###   ########.fr       */
+/*   Updated: 2020/01/31 22:16:50 by sreyne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		main(int argc, char **argv)
 	}
 	global_solution = solution(element, global_solution);
 	print_solution(global_solution);
+	global_free(element, global_solution);
 	return (0);
 }
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bhoth <bhoth@student.42.fr>                +#+  +:+       +#+         #
+#    By: sreyne <sreyne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/05 20:43:46 by bhoth             #+#    #+#              #
-#    Updated: 2020/01/29 20:45:29 by bhoth            ###   ########.fr        #
+#    Updated: 2020/01/31 19:42:07 by sreyne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ OBJS = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): lib $(OBJS)
-		gcc -o $(NAME) $(OBJS) -L libft -lft
+		gcc -g -o $(NAME) $(OBJS) -L libft -lft
 
 $(OBJS): %.o : %.c fillit.h
-		gcc -Wall -Werror -Wextra -I $(INCLUDES) -c $<
+		gcc -g -Wall -Werror -Wextra -I./ -c $<
 
 lib:
 	@make -C libft
